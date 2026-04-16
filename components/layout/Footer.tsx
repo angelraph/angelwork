@@ -8,21 +8,20 @@ import { TwitterXIcon, GithubIcon, LinkedinIcon } from "@/components/ui/SocialIc
 
 const socials = [
   { icon: TwitterXIcon, href: personalInfo.social.twitter, label: "Twitter / X" },
-  { icon: GithubIcon, href: personalInfo.social.github, label: "GitHub" },
+  { icon: GithubIcon,   href: personalInfo.social.github,  label: "GitHub" },
   { icon: LinkedinIcon, href: personalInfo.social.linkedin, label: "LinkedIn" },
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
+  { label: "About",      href: "#about" },
+  { label: "Skills",     href: "#skills" },
+  { label: "Projects",   href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact",    href: "#contact" },
 ];
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-
   const shortAddress = `${personalInfo.walletAddress.slice(0, 6)}...${personalInfo.walletAddress.slice(-4)}`;
 
   const handleCopy = () => {
@@ -32,54 +31,53 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/5 bg-[#04040f]/80 backdrop-blur-xl">
-      {/* Top glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-1/2 bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+    <footer className="relative" style={{ background: "#C93428", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+      {/* Top gradient line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-1/2"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(229,231,235,0.4), transparent)" }} />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#hero" className="flex items-center gap-2 w-fit group mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/30">
-                <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
+            <a href="#hero" className="flex items-center gap-2 w-fit mb-4">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg"
+                style={{ background: "linear-gradient(135deg,#E5E7EB,#FFFFFF)", boxShadow: "0 0 20px rgba(229,231,235,0.4)" }}>
+                <Zap className="h-5 w-5 text-[#EA4335]" strokeWidth={2.5} />
               </div>
-              <span className="text-lg font-bold text-white">
-                alex<span className="gradient-text">.</span>xyz
-              </span>
+              <span className="text-lg font-bold" style={{ color: "#F5F5F5" }}>angelraph</span>
             </a>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "#BDBDBD" }}>
               Web3 Content Strategist & Community Builder. Building the future of decentralized communities, one story at a time.
             </p>
 
-            {/* Wallet address */}
+            {/* Wallet */}
             <div className="mt-5">
-              <p className="text-xs text-slate-500 mb-2 uppercase tracking-wider">Wallet Address</p>
+              <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#BDBDBD" }}>Wallet Address</p>
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-200 group"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 group"
+                style={{ border: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}
               >
-                <span className="font-mono text-xs text-slate-400 group-hover:text-slate-200 transition-colors">
-                  {shortAddress}
-                </span>
-                {copied ? (
-                  <Check className="h-3.5 w-3.5 text-cyan-400" />
-                ) : (
-                  <Copy className="h-3.5 w-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
-                )}
+                <span className="font-mono text-xs" style={{ color: "#E0E0E0" }}>{shortAddress}</span>
+                {copied
+                  ? <Check className="h-3.5 w-3.5" style={{ color: "#E5E7EB" }} />
+                  : <Copy className="h-3.5 w-3.5" style={{ color: "#BDBDBD" }} />}
               </button>
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Nav links */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-4">Navigation</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: "#BDBDBD" }}>Navigation</p>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
+                  <a href={link.href} className="text-sm transition-colors duration-200"
+                    style={{ color: "#BDBDBD" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#F5F5F5")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#BDBDBD")}
                   >
                     {link.label}
                   </a>
@@ -90,17 +88,17 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-4">Connect</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] mb-4" style={{ color: "#BDBDBD" }}>Connect</p>
             <div className="flex flex-col gap-3">
               {socials.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors duration-200 group"
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm transition-all duration-200 group"
+                  style={{ color: "#BDBDBD" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#F5F5F5")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#BDBDBD")}
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] group-hover:border-cyan-500/30 group-hover:bg-cyan-500/5 transition-all duration-200">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg transition-all duration-200"
+                    style={{ border: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}>
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                   {label}
@@ -110,12 +108,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} {personalInfo.name}. Built with Next.js & Tailwind CSS.
+        {/* Bottom */}
+        <div className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <p className="text-xs" style={{ color: "#BDBDBD" }}>
+            © {new Date().getFullYear()} built by angelraph
           </p>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs" style={{ color: "#BDBDBD" }}>
             Designed for the{" "}
             <span className="gradient-text font-medium">decentralized future</span>.
           </p>

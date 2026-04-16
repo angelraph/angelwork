@@ -29,15 +29,17 @@ export default function Button({
   };
 
   const variantClasses = {
+    /* Indigo → Purple gradient with strong glow */
     primary:
-      "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40",
+      "bg-gradient-to-r from-[#E5E7EB] to-[#FFFFFF] text-[#EA4335] font-semibold btn-glow transition-shadow duration-300",
+    /* Ghost border in indigo */
     secondary:
-      "border border-cyan-500/40 text-cyan-400 font-semibold hover:border-cyan-400/70 hover:bg-cyan-500/5 backdrop-blur-sm",
+      "border border-[#E5E7EB]/50 text-[#E5E7EB] font-semibold hover:border-[#E5E7EB] hover:text-[#E5E7EB] hover:bg-[#E5E7EB]/5 backdrop-blur-sm transition-all duration-200",
     ghost:
-      "text-slate-300 hover:text-white font-medium",
+      "text-[#E0E0E0] hover:text-[#F5F5F5] font-medium transition-colors duration-200",
   };
 
-  const baseClasses = `relative inline-flex items-center gap-2 rounded-xl font-medium tracking-wide transition-all duration-200 cursor-pointer
+  const baseClasses = `relative inline-flex items-center gap-2 rounded-xl font-medium tracking-wide
     ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   const content = (
@@ -47,12 +49,6 @@ export default function Button({
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
-      {/* Shimmer effect on primary */}
-      {variant === "primary" && (
-        <span className="absolute inset-0 rounded-xl overflow-hidden">
-          <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </span>
-      )}
       {children}
     </motion.span>
   );

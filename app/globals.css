@@ -1,33 +1,36 @@
 @import "tailwindcss";
 
-/* ─── CSS Custom Properties ─────────────────────────────── */
+/* ─── Brand Color System ─────────────────────────────────── */
 :root {
-  --bg-primary: #04040f;
-  --bg-secondary: #080818;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --border-glow: rgba(99, 179, 237, 0.15);
-  --accent-cyan: #22d3ee;
-  --accent-purple: #a855f7;
-  --accent-blue: #3b82f6;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --glow-cyan: rgba(34, 211, 238, 0.15);
-  --glow-purple: rgba(168, 85, 247, 0.15);
+  /* Backgrounds */
+  --bg-primary:   #EA4335;
+  --bg-secondary: #D93B2F;
+  --bg-footer:    #C93428;
+
+  /* Brand */
+  --indigo:       #E5E7EB;
+  --purple:       #E5E7EB;
+  --cyan:         #22D3EE;
+
+  /* Text */
+  --text-primary:   #F5F5F5;
+  --text-secondary: #E0E0E0;
+  --text-subtle:    #BDBDBD;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-soft:   rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-roboto);
+  --font-mono: monospace;
 }
 
-/* ─── Base Reset ─────────────────────────────────────────── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* ─── Base ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -38,115 +41,77 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
 }
 
-/* ─── Custom Scrollbar ───────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+  background: linear-gradient(to bottom, var(--indigo), var(--purple));
   border-radius: 999px;
 }
 
 /* ─── Selection ──────────────────────────────────────────── */
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
+  background: rgba(229, 231, 235, 0.2);
   color: #fff;
 }
 
-/* ─── Noise Texture Overlay ──────────────────────────────── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-/* ─── Gradient Text Utility ──────────────────────────────── */
+/* ─── Gradient Text ──────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
+  background: linear-gradient(135deg, #E5E7EB 0%, #FFFFFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ─── Glassmorphism Card ─────────────────────────────────── */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #22D3EE 0%, #E5E7EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Utilities ─────────────────────────────────────── */
+.glow-indigo {
+  box-shadow: 0 0 40px rgba(229, 231, 235, 0.2);
+}
+.glow-purple {
+  box-shadow: 0 0 40px rgba(229, 231, 235, 0.2);
+}
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+}
+
+/* ─── Glass Card ─────────────────────────────────────────── */
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ─── Glow Effects ───────────────────────────────────────── */
-.glow-cyan {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.12), 0 0 60px rgba(34, 211, 238, 0.06);
-}
-
-.glow-purple {
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.12), 0 0 60px rgba(168, 85, 247, 0.06);
-}
-
-/* ─── Animated Border Gradient ───────────────────────────── */
-.border-gradient {
-  position: relative;
-  border: 1px solid transparent;
-  background-clip: padding-box;
-}
-
-.border-gradient::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* ─── Animated background orbs ───────────────────────────── */
+/* ─── Animated orbs ──────────────────────────────────────── */
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   animation: float 8s ease-in-out infinite;
   pointer-events: none;
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
+  50%       { transform: translateY(-28px) scale(1.04); }
 }
 
-/* ─── Typing cursor ───────────────────────────────────────── */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.cursor-blink {
-  animation: blink 1s step-end infinite;
-}
-
-/* ─── Section spacing ─────────────────────────────────────── */
+/* ─── Section spacing ────────────────────────────────────── */
 .section-padding {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
-
 @media (min-width: 768px) {
   .section-padding {
     padding-top: 8rem;
@@ -154,16 +119,42 @@ body::before {
   }
 }
 
-/* ─── Hero grid pattern ──────────────────────────────────── */
+/* ─── Grid pattern ───────────────────────────────────────── */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(229, 231, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 231, 235, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* ─── Metric counter ─────────────────────────────────────── */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ─── Typography — Roboto ────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+p, span, li, a, label, input, textarea, select, button {
+  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+/* ─── Noise overlay ──────────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ─── CTA Button glow ────────────────────────────────────── */
+.btn-glow {
+  box-shadow: 0 0 30px rgba(229, 231, 235, 0.25);
+}
+.btn-glow:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
 }

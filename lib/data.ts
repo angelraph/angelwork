@@ -1,15 +1,15 @@
 // ─── Static data for the portfolio ───────────────────────────────────────────
 
 export const personalInfo = {
-  name: "Alex Nakamoto",
+  name: "angelraph",
   title: "Web3 Content Strategist & Community Builder",
   tagline: "Building Communities. Crafting Narratives. Driving Adoption.",
   bio: `I've spent the last 4 years living and breathing Web3 — from DeFi protocols to NFT ecosystems,
   from DAOs to L2 scaling solutions. My mission: translate complex blockchain concepts into
   compelling stories that onboard the next million users.`,
   location: "Remote — Global",
-  email: "alex@nakamoto.xyz",
-  walletAddress: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+  email: "uzoechiraphael1@gmail.com",
+  walletAddress: "0xd7ce05e0108e9f8fadb361b05f952cf95335db5c",
   social: {
     twitter: "https://twitter.com",
     github: "https://github.com",
