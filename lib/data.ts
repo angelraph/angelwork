@@ -7,7 +7,7 @@ export const personalInfo = {
   bio: `I've spent the last 4 years living and breathing Web3 — from DeFi protocols to NFT ecosystems,
   from DAOs to L2 scaling solutions. My mission: translate complex blockchain concepts into
   compelling stories that onboard the next million users.`,
-  location: "Remote — Global",
+  location: "Remote & Global",
   email: "uzoechiraphael1@gmail.com",
   walletAddress: "0xd7ce05e0108e9f8fadb361b05f952cf95335db5c",
   social: {

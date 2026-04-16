@@ -24,7 +24,7 @@ export default function About() {
       id="about"
       label="01 / About"
       title="The Story Behind the Work"
-      subtitle="From blockchain curiosity to building communities at scale — here's how I got here."
+      subtitle="From blockchain curiosity to building communities at scale. Here is how i got here"
       className="relative"
       style={{ background: "#D93B2F" } as React.CSSProperties}
     >
@@ -41,17 +41,17 @@ export default function About() {
         >
           <div className="space-y-5 text-base leading-relaxed" style={{ color: "#E0E0E0" }}>
             <p>
-              My Web3 journey started in <span style={{ color: "#F5F5F5", fontWeight: 500 }}>2021</span> — deep in a DeFi rabbit hole,
+              My Web3 journey started in <span style={{ color: "#F5F5F5", fontWeight: 500 }}>2020</span> deep in a DeFi rabbit hole,
               reading whitepapers at 2am and joining every Discord that sounded promising. What I found wasn't
               just technology; it was a movement.
             </p>
             <p>
-              I realized quickly that the biggest challenge in Web3 wasn't building — it was{" "}
+              I realized quickly that the biggest challenge in Web3 wasn't building it was{" "}
               <span className="gradient-text font-medium">communicating and connecting</span>. Brilliant protocols
               were failing because no one understood them. Communities were disengaged because no one was listening.
             </p>
             <p>
-              So I dedicated myself to solving that problem — writing content that educates and excites,
+              So I dedicated myself to solving that problem writing content that educates and excites,
               building communities that are loyal and active, and helping protocols earn trust in a trust-scarce environment.
             </p>
             <p>

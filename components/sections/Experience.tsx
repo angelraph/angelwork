@@ -16,7 +16,7 @@ export default function Experience() {
   return (
     <SectionWrapper
       id="experience"
-      label="04 / Experience"
+      label="03 / Experience"
       title="Work History"
       subtitle="The protocols, DAOs, and projects that shaped my Web3 career."
       className="relative"

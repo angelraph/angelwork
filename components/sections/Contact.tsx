@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <SectionWrapper
       id="contact"
-      label="06 / Contact"
+      label="04 / Contact"
       title="Let's Build Together"
       subtitle="Have a project, partnership, or just want to say gm? My DMs are open."
       className="relative"
@@ -128,7 +128,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-medium mb-1.5" style={{ color: "#E0E0E0" }}>Name</label>
-                    <input name="name" value={form.name} onChange={handleChange} required placeholder="Satoshi N."
+                    <input name="name" value={form.name} onChange={handleChange} required placeholder="Uzoechi Raphael"
                       style={inputStyle}
                       onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(229,231,235,0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(229,231,235,0.1)"; }}
                       onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; }}
@@ -152,9 +152,10 @@ export default function Contact() {
                     onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; }}
                   >
                     <option value="" disabled style={{ background: "#D93B2F" }}>Select a topic...</option>
-                    <option value="community" style={{ background: "#D93B2F" }}>Community Management</option>
-                    <option value="content"   style={{ background: "#D93B2F" }}>Content Strategy</option>
                     <option value="launch"    style={{ background: "#D93B2F" }}>Protocol Launch Campaign</option>
+                    <option value="webdev"    style={{ background: "#D93B2F" }}>Web Developing</option>
+                    <option value="content"   style={{ background: "#D93B2F" }}>Content Strategy</option>
+                    <option value="community" style={{ background: "#D93B2F" }}>Community Management</option>
                     <option value="newsletter"style={{ background: "#D93B2F" }}>Newsletter / Writing</option>
                     <option value="other"     style={{ background: "#D93B2F" }}>Other</option>
                   </select>
