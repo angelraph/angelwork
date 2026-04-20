@@ -5,9 +5,9 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import { skills } from "@/lib/data";
 
 const colorConfig = {
-  cyan:   { dot: "#22D3EE", title: "#22D3EE", header: "rgba(34,211,238,0.06)",  border: "rgba(34,211,238,0.2)",  hoverShadow: "rgba(34,211,238,0.15)" },
-  purple: { dot: "#7C3AED", title: "#7C3AED", header: "rgba(124,58,237,0.06)",  border: "rgba(124,58,237,0.2)",  hoverShadow: "rgba(124,58,237,0.15)" },
-  blue:   { dot: "#7C3AED", title: "#7C3AED", header: "rgba(124,58,237,0.06)",   border: "rgba(124,58,237,0.2)",   hoverShadow: "rgba(124,58,237,0.15)" },
+  cyan:   { dot: "#1E555C", title: "#1E555C", header: "rgba(30,85,92,0.08)",     border: "rgba(30,85,92,0.2)",     hoverShadow: "rgba(30,85,92,0.15)" },
+  purple: { dot: "#1E555C", title: "#1E555C", header: "rgba(30,85,92,0.06)",  border: "rgba(30,85,92,0.2)",  hoverShadow: "rgba(30,85,92,0.15)" },
+  blue:   { dot: "#1E555C", title: "#1E555C", header: "rgba(30,85,92,0.06)",   border: "rgba(30,85,92,0.2)",   hoverShadow: "rgba(30,85,92,0.15)" },
 };
 
 export default function Skills() {
@@ -31,10 +31,10 @@ export default function Skills() {
               transition={{ delay: groupIdx * 0.15, duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
               whileHover={{ y: -4, boxShadow: `0 0 25px ${c.hoverShadow}` }}
               className="rounded-2xl overflow-hidden transition-all duration-300"
-              style={{ border: "1px solid #E2E8F0", background: "#FFFFFF", boxShadow: "0 1px 6px rgba(0,0,0,0.06)" }}
+              style={{ border: "1px solid rgba(58,46,57,0.12)", background: "#F4D8CD", boxShadow: "0 1px 6px rgba(0,0,0,0.06)" }}
             >
               {/* Header */}
-              <div className="px-6 pt-6 pb-5" style={{ background: c.header, borderBottom: "1px solid #F1F5F9" }}>
+              <div className="px-6 pt-6 pb-5" style={{ background: c.header, borderBottom: "1px solid rgba(58,46,57,0.08)" }}>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{group.icon}</span>
                   <h3 className="font-bold text-base" style={{ color: c.title }}>{group.category}</h3>
@@ -52,7 +52,7 @@ export default function Skills() {
                       viewport={{ once: true }}
                       transition={{ delay: groupIdx * 0.1 + skillIdx * 0.05 + 0.2 }}
                       className="flex items-center gap-3 text-sm transition-colors duration-200"
-                      style={{ color: "#475569" }}
+                      style={{ color: "#5C4A58" }}
                     >
                       <span className="h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ background: c.dot }} />
                       {skill}
@@ -73,7 +73,7 @@ export default function Skills() {
         transition={{ delay: 0.5, duration: 0.6 }}
         className="mt-12 text-center"
       >
-        <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "#94A3B8" }}>Also Proficient In</p>
+        <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "#8C7388" }}>Also Proficient In</p>
         <div className="flex flex-wrap justify-center gap-2">
           {["Notion","Figma","Canva","Airtable","Buffer","Hootsuite","Mirror.xyz","Substack","Google Analytics","Mixpanel","Dune","Nansen"].map((tool, i) => (
             <motion.span
@@ -84,7 +84,7 @@ export default function Skills() {
               transition={{ delay: i * 0.04 }}
               whileHover={{ scale: 1.08, y: -2 }}
               className="px-3 py-1.5 rounded-lg text-xs transition-all duration-200 cursor-default"
-              style={{ border: "1px solid #E2E8F0", background: "#F8FAFC", color: "#94A3B8" }}
+              style={{ border: "1px solid rgba(58,46,57,0.12)", background: "#FAEEE8", color: "#8C7388" }}
             >
               {tool}
             </motion.span>

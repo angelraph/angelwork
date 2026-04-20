@@ -1,55 +1,61 @@
 @import "tailwindcss";
 
-/* ─── Brand Color System ─────────────────────────────────── */
+/* ─── Coolors Palette ────────────────────────────────────────
+   #3A2E39  Deep Plum      — dark bg, headings, footer
+   #1E555C  Dark Teal      — primary accent, links, icons
+   #F4D8CD  Blush Peach    — main background
+   #EDB183  Warm Sand      — secondary accent, badges
+   #F15152  Coral Red      — CTA buttons, highlights
+──────────────────────────────────────────────────────────── */
 :root {
-  /* Backgrounds */
-  --bg-primary:     #FFFFFF;
-  --bg-secondary:   #F8FAFC;
-  --bg-card:        #FFFFFF;
-  --bg-footer:      #0F172A;
+  /* Palette */
+  --plum:   #3A2E39;
+  --teal:   #1E555C;
+  --peach:  #F4D8CD;
+  --sand:   #EDB183;
+  --coral:  #F15152;
 
-  /* Accent */
-  --accent:         #7C3AED;
-  --accent-light:   #EDE9FE;
-  --accent-hover:   #6D28D9;
+  /* Backgrounds */
+  --bg-primary:   #F4D8CD;
+  --bg-secondary: #FAEEE8;
+  --bg-card:      #FFFFFF;
+  --bg-dark:      #3A2E39;
+  --bg-footer:    #3A2E39;
 
   /* Text */
-  --text-heading:   #0F172A;
-  --text-primary:   #0F172A;
-  --text-secondary: #475569;
-  --text-subtle:    #94A3B8;
+  --text-heading:   #3A2E39;
+  --text-primary:   #3A2E39;
+  --text-secondary: #5C4A58;
+  --text-subtle:    #8C7388;
+  --text-on-dark:   #F4D8CD;
 
   /* Borders */
-  --border:         #E2E8F0;
-  --border-accent:  #CBD5E1;
+  --border:        rgba(58, 46, 57, 0.12);
+  --border-accent: rgba(30, 85, 92, 0.25);
 
-  /* ── Font families ── */
+  /* Fonts */
   --font-heading: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
   --font-body:    var(--font-inter), 'Inter', system-ui, sans-serif;
 
-  /* ── Type scale ── */
-  --text-xs:   0.75rem;    /* 12px — labels, tags */
-  --text-sm:   0.875rem;   /* 14px — captions, badges */
-  --text-base: 1rem;       /* 16px — body */
-  --text-lg:   1.125rem;   /* 18px — lead text */
-  --text-xl:   1.25rem;    /* 20px — sub-headings */
-  --text-2xl:  1.5rem;     /* 24px */
-  --text-3xl:  1.875rem;   /* 30px */
-  --text-4xl:  2.25rem;    /* 36px */
-  --text-5xl:  3rem;       /* 48px — section titles */
-  --text-7xl:  4.5rem;     /* 72px — hero */
+  /* Type scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-7xl:  4.5rem;
 
-  /* ── Line heights ── */
-  --leading-tight:  1.2;
-  --leading-snug:   1.375;
-  --leading-normal: 1.6;
-  --leading-relaxed:1.75;
+  --leading-tight:   1.2;
+  --leading-snug:    1.375;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
 
-  /* ── Letter spacing ── */
-  --tracking-tight:  -0.02em;
-  --tracking-normal:  0em;
-  --tracking-wide:    0.05em;
-  --tracking-widest:  0.15em;
+  --tracking-tight:   -0.02em;
+  --tracking-widest:   0.15em;
 }
 
 @theme inline {
@@ -59,7 +65,7 @@
   --font-mono: monospace;
 }
 
-/* ─── Base Reset ─────────────────────────────────────────── */
+/* ─── Base ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -69,7 +75,6 @@ html {
   font-size: 16px;
 }
 
-/* ── Body — Inter ─────────────────────────────────────────── */
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -80,7 +85,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Headings — Montserrat ────────────────────────────────── */
+/* ─── Headings — Montserrat ──────────────────────────────── */
 h1 {
   font-family: var(--font-heading);
   font-weight: 900;
@@ -89,7 +94,6 @@ h1 {
   letter-spacing: var(--tracking-tight);
   color: var(--text-heading);
 }
-
 h2 {
   font-family: var(--font-heading);
   font-weight: 800;
@@ -98,7 +102,6 @@ h2 {
   letter-spacing: var(--tracking-tight);
   color: var(--text-heading);
 }
-
 h3 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -107,7 +110,6 @@ h3 {
   letter-spacing: -0.01em;
   color: var(--text-heading);
 }
-
 h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -115,67 +117,32 @@ h4, h5, h6 {
   color: var(--text-heading);
 }
 
-/* ── Body elements — Inter ────────────────────────────────── */
-p {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--leading-relaxed);
-  color: var(--text-secondary);
-}
-
-a {
-  font-family: var(--font-body);
-  transition: color 0.2s;
-}
-
-label, input, textarea, select {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-}
-
-button, span, li {
-  font-family: var(--font-body);
-}
-
-/* ── Utility: force Montserrat on any element ─────────────── */
-.font-heading {
-  font-family: var(--font-heading) !important;
-}
+/* ─── Body — Inter ───────────────────────────────────────── */
+p   { font-family: var(--font-body); line-height: var(--leading-relaxed); color: var(--text-secondary); }
+a   { font-family: var(--font-body); transition: color 0.2s; }
+label, input, textarea, select { font-family: var(--font-body); font-size: var(--text-sm); }
+button, span, li { font-family: var(--font-body); }
+.font-heading { font-family: var(--font-heading) !important; }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-track { background: #EDD5C8; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7C3AED, #9F67EA);
+  background: linear-gradient(to bottom, #1E555C, #F15152);
   border-radius: 999px;
 }
 
 /* ─── Selection ──────────────────────────────────────────── */
-::selection {
-  background: rgba(124, 58, 237, 0.15);
-  color: #0F172A;
-}
+::selection { background: rgba(241, 81, 82, 0.2); color: #3A2E39; }
 
 /* ─── Gradient Text ──────────────────────────────────────── */
 .gradient-text {
   font-family: var(--font-heading);
   font-weight: 800;
-  background: linear-gradient(135deg, #7C3AED 0%, #9F67EA 100%);
+  background: linear-gradient(135deg, #1E555C 0%, #F15152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* ─── Glow Utilities ─────────────────────────────────────── */
-.glow-accent {
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25);
-}
-
-/* ─── Glass Card ─────────────────────────────────────────── */
-.glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid #E2E8F0;
 }
 
 /* ─── Animated orbs ──────────────────────────────────────── */
@@ -192,29 +159,23 @@ button, span, li {
 }
 
 /* ─── Section spacing ────────────────────────────────────── */
-.section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
+.section-padding { padding-top: 6rem; padding-bottom: 6rem; }
 @media (min-width: 768px) {
-  .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
+  .section-padding { padding-top: 8rem; padding-bottom: 8rem; }
 }
 
 /* ─── Grid pattern ───────────────────────────────────────── */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(30, 85, 92, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 85, 92, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* ─── CTA Button ─────────────────────────────────────────── */
 .btn-glow {
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 4px 20px rgba(241, 81, 82, 0.4);
 }
 .btn-glow:hover {
-  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 6px 28px rgba(241, 81, 82, 0.6);
 }

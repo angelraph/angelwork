@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen antialiased" style={{ background: "#FFFFFF", color: "#0F172A" }}>
+      <body className="min-h-screen antialiased" style={{ background: "#F4D8CD", color: "#3A2E39" }}>
         <Web3Provider>{children}</Web3Provider>
       </body>
     </html>

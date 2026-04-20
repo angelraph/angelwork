@@ -30,11 +30,11 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-[#7C3AED] to-[#9F67EA] text-white font-semibold btn-glow transition-shadow duration-300",
+      "bg-[#F15152] text-white font-semibold btn-glow transition-all duration-200 hover:bg-[#D94344]",
     secondary:
-      "border border-[#7C3AED] text-[#7C3AED] font-semibold hover:bg-[#7C3AED] hover:text-white transition-all duration-200",
+      "border-2 border-[#1E555C] text-[#1E555C] font-semibold hover:bg-[#1E555C] hover:text-[#F4D8CD] transition-all duration-200",
     ghost:
-      "text-[#475569] hover:text-[#0F172A] font-medium transition-colors duration-200",
+      "text-[#5C4A58] hover:text-[#3A2E39] font-medium transition-colors duration-200",
   };
 
   const baseClasses = `relative inline-flex items-center gap-2 rounded-xl font-semibold tracking-wide font-heading
