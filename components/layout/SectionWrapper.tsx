@@ -27,7 +27,7 @@ export default function SectionWrapper({ children, id, className = "", style, la
           >
             {label && (
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
-                style={{ color: "#E5E7EB" }}>
+                style={{ color: "#7C3AED" }}>
                 {label}
               </p>
             )}
@@ -36,7 +36,7 @@ export default function SectionWrapper({ children, id, className = "", style, la
             )}
             {subtitle && (
               <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
-                style={{ color: "#E0E0E0" }}>
+                style={{ color: "#475569" }}>
                 {subtitle}
               </p>
             )}

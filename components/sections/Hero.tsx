@@ -44,7 +44,7 @@ function ParticleCanvas() {
         if (p.y > canvas.height) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(229,231,235,${p.opacity})`;
+        ctx.fillStyle = `rgba(124,58,237,${p.opacity})`;
         ctx.fill();
       });
       for (let i = 0; i < particles.length; i++) {
@@ -56,7 +56,7 @@ function ParticleCanvas() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(229,231,235,${0.08 * (1 - dist / 100)})`;
+            ctx.strokeStyle = `rgba(124,58,237,${0.08 * (1 - dist / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -79,11 +79,11 @@ function StatusBadge() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium mb-8"
-      style={{ border: "1px solid rgba(229,231,235,0.3)", background: "rgba(229,231,235,0.08)", color: "#E5E7EB" }}
+      style={{ border: "1px solid rgba(124,58,237,0.3)", background: "rgba(124,58,237,0.08)", color: "#7C3AED" }}
     >
       <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping" style={{ background: "#E5E7EB" }} />
-        <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: "#E5E7EB" }} />
+        <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping" style={{ background: "#7C3AED" }} />
+        <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: "#7C3AED" }} />
       </span>
       Available for new projects
     </motion.div>
@@ -96,13 +96,13 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-pattern"
-      style={{ background: "#EA4335" }}
+      style={{ background: "#FFFFFF" }}
     >
       {/* Orbs */}
       <div className="orb w-[600px] h-[600px] -top-48 -right-48"
-        style={{ background: "rgba(229,231,235,0.15)", filter: "blur(100px)" }} />
+        style={{ background: "rgba(124,58,237,0.15)", filter: "blur(100px)" }} />
       <div className="orb w-[500px] h-[500px] -bottom-32 -left-32"
-        style={{ background: "rgba(229,231,235,0.12)", filter: "blur(100px)", animationDelay: "3s" }} />
+        style={{ background: "rgba(124,58,237,0.12)", filter: "blur(100px)", animationDelay: "3s" }} />
 
       <ParticleCanvas />
 
@@ -114,7 +114,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
-          style={{ color: "#FFFFFF" }}
+          style={{ color: "#0F172A" }}
         >
           {personalInfo.name}
         </motion.h1>
@@ -133,7 +133,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
           className="mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
-          style={{ color: "#E0E0E0" }}
+          style={{ color: "#475569" }}
         >
           {personalInfo.tagline}
         </motion.p>
@@ -167,7 +167,7 @@ export default function Hero() {
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <p className="text-2xl font-bold gradient-text">{stat.value}</p>
-              <p className="text-xs uppercase tracking-wider mt-1" style={{ color: "#BDBDBD" }}>{stat.label}</p>
+              <p className="text-xs uppercase tracking-wider mt-1" style={{ color: "#94A3B8" }}>{stat.label}</p>
             </div>
           ))}
         </motion.div>
@@ -179,7 +179,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ color: "#BDBDBD" }}
+        style={{ color: "#94A3B8" }}
       >
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}>
           <MousePointer2 className="h-4 w-4" />

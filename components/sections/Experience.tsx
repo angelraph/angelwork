@@ -6,8 +6,8 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import { experiences } from "@/lib/data";
 
 const typeConfig = {
-  "full-time": { label: "Full-time", bg: "rgba(229,231,235,0.1)",  border: "rgba(229,231,235,0.3)",  text: "#E5E7EB" },
-  "contract":  { label: "Contract",  bg: "rgba(229,231,235,0.1)", border: "rgba(229,231,235,0.3)", text: "#E5E7EB" },
+  "full-time": { label: "Full-time", bg: "rgba(124,58,237,0.1)",  border: "rgba(124,58,237,0.3)",  text: "#7C3AED" },
+  "contract":  { label: "Contract",  bg: "rgba(124,58,237,0.1)", border: "rgba(124,58,237,0.3)", text: "#7C3AED" },
   "founder":   { label: "Founder",   bg: "rgba(34,211,238,0.1)", border: "rgba(34,211,238,0.3)", text: "#22D3EE" },
 };
 const typeIcons = { "full-time": Briefcase, "contract": Code, "founder": Star };
@@ -20,12 +20,12 @@ export default function Experience() {
       title="Work History"
       subtitle="The protocols, DAOs, and projects that shaped my Web3 career."
       className="relative"
-      style={{ background: "#D93B2F" } as React.CSSProperties}
+      style={{ background: "#F8FAFC" } as React.CSSProperties}
     >
       <div className="relative max-w-3xl mx-auto">
         {/* Timeline line: indigo */}
         <div className="absolute left-8 top-0 bottom-0 w-px hidden sm:block"
-          style={{ background: "linear-gradient(to bottom, #E5E7EB, rgba(229,231,235,0.3), transparent)" }} />
+          style={{ background: "linear-gradient(to bottom, #7C3AED, rgba(124,58,237,0.3), transparent)" }} />
 
         <div className="space-y-8">
           {experiences.map((exp, i) => {
@@ -47,38 +47,38 @@ export default function Experience() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.12 + 0.2, duration: 0.4 }}
                     className="relative h-10 w-10 rounded-xl flex items-center justify-center z-10 transition-all duration-300"
-                    style={{ border: "1px solid rgba(229,231,235,0.3)", background: "rgba(229,231,235,0.08)" }}
+                    style={{ border: "1px solid rgba(124,58,237,0.3)", background: "rgba(124,58,237,0.08)" }}
                   >
-                    <Icon className="h-4 w-4" strokeWidth={1.5} style={{ color: "#E5E7EB" }} />
+                    <Icon className="h-4 w-4" strokeWidth={1.5} style={{ color: "#7C3AED" }} />
                   </motion.div>
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 rounded-2xl p-6 transition-all duration-300 group-hover:border-[rgba(229,231,235,0.2)]"
-                  style={{ border: "1px solid rgba(255,255,255,0.05)", background: "rgba(255,255,255,0.02)" }}>
+                <div className="flex-1 rounded-2xl p-6 transition-all duration-300 group-hover:border-[rgba(124,58,237,0.2)]"
+                  style={{ border: "1px solid #E2E8F0", background: "#F8FAFC" }}>
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
                       <div className="flex items-center gap-2.5 flex-wrap">
-                        <h3 className="text-base font-bold" style={{ color: "#F5F5F5" }}>{exp.role}</h3>
+                        <h3 className="text-base font-bold" style={{ color: "#0F172A" }}>{exp.role}</h3>
                         <span className="px-2 py-0.5 rounded-md border text-xs font-medium"
                           style={{ background: cfg.bg, border: `1px solid ${cfg.border}`, color: cfg.text }}>
                           {cfg.label}
                         </span>
                       </div>
-                      <p className="text-sm font-medium mt-0.5" style={{ color: "#E5E7EB" }}>{exp.company}</p>
+                      <p className="text-sm font-medium mt-0.5" style={{ color: "#7C3AED" }}>{exp.company}</p>
                     </div>
                     <span className="text-xs font-mono px-2.5 py-1.5 rounded-lg flex-shrink-0"
-                      style={{ border: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.03)", color: "#BDBDBD" }}>
+                      style={{ border: "1px solid #E2E8F0", background: "#F1F5F9", color: "#94A3B8" }}>
                       {exp.period}
                     </span>
                   </div>
 
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#E0E0E0" }}>{exp.description}</p>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#475569" }}>{exp.description}</p>
 
                   <ul className="space-y-1.5">
                     {exp.highlights.map((hl) => (
-                      <li key={hl} className="flex items-center gap-2.5 text-xs" style={{ color: "#E0E0E0" }}>
-                        <span className="h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ background: "#E5E7EB" }} />
+                      <li key={hl} className="flex items-center gap-2.5 text-xs" style={{ color: "#475569" }}>
+                        <span className="h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ background: "#7C3AED" }} />
                         {hl}
                       </li>
                     ))}

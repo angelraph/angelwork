@@ -29,17 +29,15 @@ export default function Button({
   };
 
   const variantClasses = {
-    /* Indigo → Purple gradient with strong glow */
     primary:
-      "bg-gradient-to-r from-[#E5E7EB] to-[#FFFFFF] text-[#EA4335] font-semibold btn-glow transition-shadow duration-300",
-    /* Ghost border in indigo */
+      "bg-gradient-to-r from-[#7C3AED] to-[#9F67EA] text-white font-semibold btn-glow transition-shadow duration-300",
     secondary:
-      "border border-[#E5E7EB]/50 text-[#E5E7EB] font-semibold hover:border-[#E5E7EB] hover:text-[#E5E7EB] hover:bg-[#E5E7EB]/5 backdrop-blur-sm transition-all duration-200",
+      "border border-[#7C3AED] text-[#7C3AED] font-semibold hover:bg-[#7C3AED] hover:text-white transition-all duration-200",
     ghost:
-      "text-[#E0E0E0] hover:text-[#F5F5F5] font-medium transition-colors duration-200",
+      "text-[#475569] hover:text-[#0F172A] font-medium transition-colors duration-200",
   };
 
-  const baseClasses = `relative inline-flex items-center gap-2 rounded-xl font-medium tracking-wide
+  const baseClasses = `relative inline-flex items-center gap-2 rounded-xl font-semibold tracking-wide font-heading
     ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   const content = (

@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Web3Provider from "@/components/providers/Web3Provider";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+// Body font — clean, modern, excellent readability
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+// Headline font — strong, Web3-native, professional branding
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -33,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable}>
-      <body className="min-h-screen antialiased" style={{ background: "#EA4335", color: "#F5F5F5" }}>
+    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+      <body className="min-h-screen antialiased" style={{ background: "#FFFFFF", color: "#0F172A" }}>
         <Web3Provider>{children}</Web3Provider>
       </body>
     </html>

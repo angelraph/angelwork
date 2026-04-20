@@ -3,95 +3,179 @@
 /* ─── Brand Color System ─────────────────────────────────── */
 :root {
   /* Backgrounds */
-  --bg-primary:   #EA4335;
-  --bg-secondary: #D93B2F;
-  --bg-footer:    #C93428;
+  --bg-primary:     #FFFFFF;
+  --bg-secondary:   #F8FAFC;
+  --bg-card:        #FFFFFF;
+  --bg-footer:      #0F172A;
 
-  /* Brand */
-  --indigo:       #E5E7EB;
-  --purple:       #E5E7EB;
-  --cyan:         #22D3EE;
+  /* Accent */
+  --accent:         #7C3AED;
+  --accent-light:   #EDE9FE;
+  --accent-hover:   #6D28D9;
 
   /* Text */
-  --text-primary:   #F5F5F5;
-  --text-secondary: #E0E0E0;
-  --text-subtle:    #BDBDBD;
+  --text-heading:   #0F172A;
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-subtle:    #94A3B8;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-soft:   rgba(255, 255, 255, 0.08);
+  --border:         #E2E8F0;
+  --border-accent:  #CBD5E1;
+
+  /* ── Font families ── */
+  --font-heading: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
+  --font-body:    var(--font-inter), 'Inter', system-ui, sans-serif;
+
+  /* ── Type scale ── */
+  --text-xs:   0.75rem;    /* 12px — labels, tags */
+  --text-sm:   0.875rem;   /* 14px — captions, badges */
+  --text-base: 1rem;       /* 16px — body */
+  --text-lg:   1.125rem;   /* 18px — lead text */
+  --text-xl:   1.25rem;    /* 20px — sub-headings */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px — section titles */
+  --text-7xl:  4.5rem;     /* 72px — hero */
+
+  /* ── Line heights ── */
+  --leading-tight:  1.2;
+  --leading-snug:   1.375;
+  --leading-normal: 1.6;
+  --leading-relaxed:1.75;
+
+  /* ── Letter spacing ── */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-widest:  0.15em;
 }
 
 @theme inline {
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-roboto);
+  --font-sans: var(--font-inter);
   --font-mono: monospace;
 }
 
-/* ─── Base ───────────────────────────────────────────────── */
+/* ─── Base Reset ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
+/* ── Body — Inter ─────────────────────────────────────────── */
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
   overflow-x: hidden;
-  line-height: 1.6;
+}
+
+/* ── Headings — Montserrat ────────────────────────────────── */
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: var(--text-7xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-heading);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-heading);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+  color: var(--text-heading);
+}
+
+h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--text-heading);
+}
+
+/* ── Body elements — Inter ────────────────────────────────── */
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+a {
+  font-family: var(--font-body);
+  transition: color 0.2s;
+}
+
+label, input, textarea, select {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+
+button, span, li {
+  font-family: var(--font-body);
+}
+
+/* ── Utility: force Montserrat on any element ─────────────── */
+.font-heading {
+  font-family: var(--font-heading) !important;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-track { background: #F1F5F9; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--indigo), var(--purple));
+  background: linear-gradient(to bottom, #7C3AED, #9F67EA);
   border-radius: 999px;
 }
 
 /* ─── Selection ──────────────────────────────────────────── */
 ::selection {
-  background: rgba(229, 231, 235, 0.2);
-  color: #fff;
+  background: rgba(124, 58, 237, 0.15);
+  color: #0F172A;
 }
 
 /* ─── Gradient Text ──────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #E5E7EB 0%, #FFFFFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-cyan {
-  background: linear-gradient(135deg, #22D3EE 0%, #E5E7EB 100%);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  background: linear-gradient(135deg, #7C3AED 0%, #9F67EA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* ─── Glow Utilities ─────────────────────────────────────── */
-.glow-indigo {
-  box-shadow: 0 0 40px rgba(229, 231, 235, 0.2);
-}
-.glow-purple {
-  box-shadow: 0 0 40px rgba(229, 231, 235, 0.2);
-}
-.glow-cyan {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+.glow-accent {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25);
 }
 
 /* ─── Glass Card ─────────────────────────────────────────── */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #E2E8F0;
 }
 
 /* ─── Animated orbs ──────────────────────────────────────── */
@@ -122,39 +206,15 @@ body {
 /* ─── Grid pattern ───────────────────────────────────────── */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(229, 231, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229, 231, 235, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* ─── Typography — Roboto ────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-}
-
-p, span, li, a, label, input, textarea, select, button {
-  font-family: var(--font-roboto), 'Roboto', system-ui, sans-serif;
-  font-weight: 400;
-}
-
-/* ─── Noise overlay ──────────────────────────────────────── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.35;
-}
-
-/* ─── CTA Button glow ────────────────────────────────────── */
+/* ─── CTA Button ─────────────────────────────────────────── */
 .btn-glow {
-  box-shadow: 0 0 30px rgba(229, 231, 235, 0.25);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
 }
 .btn-glow:hover {
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5);
 }
