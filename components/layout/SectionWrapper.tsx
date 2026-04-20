@@ -32,7 +32,7 @@ export default function SectionWrapper({ children, id, className = "", style, la
               </p>
             )}
             {title && (
-              <h2 className="gradient-text text-3xl font-bold sm:text-4xl lg:text-5xl">{title}</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl" style={{ color: "#1E555C" }}>{title}</h2>
             )}
             {subtitle && (
               <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"

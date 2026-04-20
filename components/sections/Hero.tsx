@@ -123,7 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.7 }}
-          className="mt-4 text-xl font-medium sm:text-2xl gradient-text"
+          className="mt-4 text-xl font-medium sm:text-2xl" style={{ color: "#1E555C" }}
         >
           {personalInfo.title}
         </motion.p>
@@ -166,7 +166,7 @@ export default function Hero() {
             { value: "25+", label: "Protocols" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-2xl font-bold gradient-text">{stat.value}</p>
+              <p className="text-2xl font-bold" style={{ color: "#1E555C" }}>{stat.value}</p>
               <p className="text-xs uppercase tracking-wider mt-1" style={{ color: "#8C7388" }}>{stat.label}</p>
             </div>
           ))}

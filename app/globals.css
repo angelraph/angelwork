@@ -128,7 +128,7 @@ button, span, li { font-family: var(--font-body); }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #EDD5C8; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #1E555C, #F15152);
+  background: #1E555C;
   border-radius: 999px;
 }
 
@@ -139,10 +139,7 @@ button, span, li { font-family: var(--font-body); }
 .gradient-text {
   font-family: var(--font-heading);
   font-weight: 800;
-  background: linear-gradient(135deg, #1E555C 0%, #F15152 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1E555C;
 }
 
 /* ─── Animated orbs ──────────────────────────────────────── */

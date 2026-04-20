@@ -47,7 +47,7 @@ export default function About() {
             </p>
             <p>
               I realized quickly that the biggest challenge in Web3 wasn't building it was{" "}
-              <span className="gradient-text font-medium">communicating and connecting</span>. Brilliant protocols
+              <span style={{ color: "#1E555C", fontWeight: 500 }}>communicating and connecting</span>. Brilliant protocols
               were failing because no one understood them. Communities were disengaged because no one was listening.
             </p>
             <p>

@@ -25,7 +25,7 @@ export default function Experience() {
       <div className="relative max-w-3xl mx-auto">
         {/* Timeline line: indigo */}
         <div className="absolute left-8 top-0 bottom-0 w-px hidden sm:block"
-          style={{ background: "linear-gradient(to bottom, #1E555C, rgba(30,85,92,0.3), transparent)" }} />
+          style={{ background: "#1E555C" }} />
 
         <div className="space-y-8">
           {experiences.map((exp, i) => {

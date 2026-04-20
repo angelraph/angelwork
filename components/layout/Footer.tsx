@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "#3A2E39" }}>
       {/* Top accent line */}
-      <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1E555C, #EDB183, #F15152)" }} />
+      <div className="h-1 w-full" style={{ background: "#1E555C" }} />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,7 +112,7 @@ export default function Footer() {
           </p>
           <p className="text-xs" style={{ color: "#7A6B72" }}>
             Designed for the{" "}
-            <span className="gradient-text font-medium">decentralized future</span>.
+            <span style={{ color: "#EDB183", fontWeight: 600 }}>decentralized future</span>.
           </p>
         </div>
       </div>
