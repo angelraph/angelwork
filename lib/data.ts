@@ -91,9 +91,9 @@ export const projects = [
   },
   {
     id: 3,
-    title: "ChainPulse Newsletter",
+    title: "Learn & Earn Newsletter",
     description:
-      "Founded and grew ChainPulse, a weekly Web3 intelligence newsletter covering protocol updates, alpha, and market insights for builders and investors.",
+      "Founded and grew Learn & Earn, a weekly Web3 intelligence newsletter covering protocol updates, alpha, and market insights for builders and investors.",
     role: "Founder & Editor-in-Chief",
     impact: "28k+ subscribers · 62% avg open rate · 4.2% click-through",
     tags: ["Newsletter", "Content", "Growth"],
@@ -146,7 +146,7 @@ export const experiences = [
   },
   {
     id: 4,
-    company: "ChainPulse (Self-Founded)",
+    company: "Learn & Earn (Self-Founded)",
     role: "Founder & Editor",
     period: "2021 — Present",
     description:

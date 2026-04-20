@@ -15,7 +15,7 @@ const testimonials = [
     role: "CMO, NovaDEX",
   },
   {
-    quote: "ChainPulse has been in my reading list since day one. Best Web3 newsletter, hands down.",
+    quote: "Learn & Earn has been in my reading list since day one. Best Web3 newsletter, hands down.",
     author: "Marcus R.",
     role: "Web3 Investor",
   },
